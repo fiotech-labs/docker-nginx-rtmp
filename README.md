@@ -7,20 +7,20 @@ default settings for HLS live streaming. Built on Alpine Linux.
 * ffmpeg 5.1 (compiled from source)
 * Default HLS settings (See: [nginx.conf](nginx.conf))
 
-[![Docker Stars](https://img.shields.io/docker/stars/alfg/nginx-rtmp.svg)](https://hub.docker.com/r/alfg/nginx-rtmp/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/alfg/nginx-rtmp.svg)](https://hub.docker.com/r/alfg/nginx-rtmp/)
-[![Docker Automated build](https://img.shields.io/docker/automated/alfg/nginx-rtmp.svg)](https://hub.docker.com/r/alfg/nginx-rtmp/builds/)
-[![Build Status](https://travis-ci.org/alfg/docker-nginx-rtmp.svg?branch=master)](https://travis-ci.org/alfg/docker-nginx-rtmp)
+[![Docker Stars](https://img.shields.io/docker/stars/fiotechlabs/nginx-rtmp.svg)](https://hub.docker.com/r/fiotechlabs/nginx-rtmp/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/fiotechlabs/nginx-rtmp.svg)](https://hub.docker.com/r/fiotechlabs/nginx-rtmp/)
+[![Docker Automated build](https://img.shields.io/docker/automated/fiotechlabs/nginx-rtmp.svg)](https://hub.docker.com/r/fiotechlabs/nginx-rtmp/builds/)
+[![Build Status](https://travis-ci.org/fiotechlabs/docker-nginx-rtmp.svg?branch=master)](https://travis-ci.org/fiotechlabs/docker-nginx-rtmp)
 
 ## Usage
 
 ### Server
 * Pull docker image and run:
 ```
-docker pull alfg/nginx-rtmp
-docker run -it -p 1935:1935 -p 8080:80 --rm alfg/nginx-rtmp
+docker pull fiotechlabs/nginx-rtmp
+docker run -it -p 1935:1935 -p 8080:80 --rm fiotechlabs/nginx-rtmp
 ```
-or 
+or
 
 * Build and run container from source:
 ```
@@ -33,7 +33,7 @@ docker run -it -p 1935:1935 -p 8080:80 --rm nginx-rtmp
 rtmp://localhost:1935/stream/$STREAM_NAME
 ```
 
-### SSL 
+### SSL
 To enable SSL, see [nginx.conf](nginx.conf) and uncomment the lines:
 ```
 listen 443 ssl;
@@ -122,9 +122,9 @@ ffmpeg version 4.4 Copyright (c) 2000-2021 the FFmpeg developers
 ### FFmpeg Hardware Acceleration
 A `Dockerfile.cuda` image is available to enable FFmpeg hardware acceleration via the [NVIDIA's CUDA](https://trac.ffmpeg.org/wiki/HWAccelIntro#CUDANVENCNVDEC).
 
-Use the tag: `alfg/nginx-rtmp:cuda`:
+Use the tag: `fiotechlabs/nginx-rtmp:cuda`:
 ```
-docker run -it -p 1935:1935 -p 8080:80 --rm alfg/nginx-rtmp:cuda
+docker run -it -p 1935:1935 -p 8080:80 --rm fiotechlabs/nginx-rtmp:cuda
 ```
 
 You must have a supported platform and driver to run this image.
